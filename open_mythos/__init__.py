@@ -1,3 +1,5 @@
+"""OpenMythos module exports."""
+
 from open_mythos.main import (
     ACTHalting,
     Expert,

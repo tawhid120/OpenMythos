@@ -1,3 +1,4 @@
+"""Example usage of OpenMythos."""
 import torch
 
 from open_mythos.main import MythosConfig, OpenMythos

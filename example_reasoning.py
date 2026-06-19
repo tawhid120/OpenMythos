@@ -1,3 +1,4 @@
+"""Example of OpenMythos reasoning inference."""
 import torch
 from open_mythos.main import OpenMythos
 from open_mythos.variants import mythos_1b
