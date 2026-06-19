@@ -515,16 +515,10 @@ def main() -> None:
         f"{mm.final_loss:>16.4f}   {bm.final_loss:>16.4f}"
     )
     print(
-        f"  {'avg train (all steps)':<24} "
-        f"{mm.avg_loss:>16.4f}   {bm.avg_loss:>16.4f}"
+        f"  {'avg train (all steps)':<24} {mm.avg_loss:>16.4f}   {bm.avg_loss:>16.4f}"
     )
-    print(
-        f"  {'train time (sec)':<24} "
-        f"{mm.total_time:>16.2f}   {bm.total_time:>16.2f}"
-    )
-    print(
-        f"  {'avg tok/s':<24} " f"{mm.tok_per_sec:>16,.0f}   {bm.tok_per_sec:>16,.0f}"
-    )
+    print(f"  {'train time (sec)':<24} {mm.total_time:>16.2f}   {bm.total_time:>16.2f}")
+    print(f"  {'avg tok/s':<24} {mm.tok_per_sec:>16,.0f}   {bm.tok_per_sec:>16,.0f}")
     print(
         f"  {'sec/step':<24} "
         f"{mm.total_time / max(1, mm.steps):>16.4f}   "
