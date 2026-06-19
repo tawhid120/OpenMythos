@@ -51,7 +51,7 @@ from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
 import torch
-import torch.nn as nn
+from torch import nn
 import torch.nn.functional as F
 
 
@@ -431,9 +431,7 @@ class DeepSeekGate(nn.Module):
             _, top_groups = group_scores.topk(self.topk_groups, dim=-1)  # [T, topk_g]
             mask = torch.ones(
                 x.size(0), self.n_groups, dtype=torch.bool, device=x.device
-            ).scatter_(
-                1, top_groups, False
-            )  # True = masked out
+            ).scatter_(1, top_groups, False)  # True = masked out
             routing = g.masked_fill(mask.unsqueeze(-1), float("-inf")).flatten(1)
 
         # Top-K selection (on routing scores which may include bias / group mask)

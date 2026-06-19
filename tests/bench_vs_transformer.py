@@ -405,7 +405,7 @@ def main() -> None:
         mem = peak_mem_mb(device)
         print(
             f"  {'Baseline (stacked)':<26} {seq_len:>6} "
-            f"{secs*1000:>9.2f}ms {tps:>12,.0f} {mem:>10.1f}"
+            f"{secs * 1000:>9.2f}ms {tps:>12,.0f} {mem:>10.1f}"
         )
 
         for nl in n_loops_sweep:
@@ -416,7 +416,7 @@ def main() -> None:
             mem = peak_mem_mb(device)
             print(
                 f"  {'OpenMythos (loops=' + str(nl) + ')':<26} {seq_len:>6} "
-                f"{secs*1000:>9.2f}ms {tps:>12,.0f} {mem:>10.1f}"
+                f"{secs * 1000:>9.2f}ms {tps:>12,.0f} {mem:>10.1f}"
             )
 
     # ---- Decode ----
@@ -435,7 +435,7 @@ def main() -> None:
         args.decode_steps,
         device,
     )
-    print(f"  {'Baseline (stacked)':<26} {per_step*1000:>10.2f}ms {tps:>14,.1f}")
+    print(f"  {'Baseline (stacked)':<26} {per_step * 1000:>10.2f}ms {tps:>14,.1f}")
 
     for nl in n_loops_sweep:
         reset_mem(device)
@@ -450,7 +450,7 @@ def main() -> None:
         )
         print(
             f"  {'OpenMythos (loops=' + str(nl) + ')':<26} "
-            f"{per_step*1000:>10.2f}ms {tps:>14,.1f}"
+            f"{per_step * 1000:>10.2f}ms {tps:>14,.1f}"
         )
 
     # ---- Depth scaling ----
@@ -471,7 +471,7 @@ def main() -> None:
             delta = "1.00x"
         else:
             delta = f"{secs / base_secs:.2f}x"
-        print(f"  {nl:>8} {secs*1000:>9.2f}ms {tps:>12,.0f} {delta:>14}")
+        print(f"  {nl:>8} {secs * 1000:>9.2f}ms {tps:>12,.0f} {delta:>14}")
 
     print("\nDone.")
 
